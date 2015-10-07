@@ -70,8 +70,8 @@ alias ze='vim ~/.zshrc'
 
 # Git Aliases
 alias gs='git status'
+alias gst='git status'
 alias gstsh='git stash'
-alias gst='git stash'
 alias gsp='git stash pop'
 alias gsa='git stash apply'
 alias gsh='git show'
@@ -97,9 +97,9 @@ alias gr='git rebase'
 alias gra='git rebase --abort'
 alias ggrc='git rebase --continue'
 alias gbi='git rebase --interactive'
-alias gl='git l'
-alias glg='git l'
-alias glog='git l'
+alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias glg="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias co='git co'
 alias gf='git fetch'
 alias gfp='git fetch --prune'
@@ -119,6 +119,7 @@ alias gplr='git pull --rebase'
 alias gps='git push'
 alias gpsh='git push -u origin `git rev-parse --abbrev-ref HEAD`'
 alias gnb='git nb' # new branch aka checkout -b
+alias gclean='git rm -r --cached . ; git add .'
 alias grs='git reset'
 alias grsh='git reset --hard'
 alias gcln='git clean'
@@ -131,6 +132,16 @@ alias gt='git t'
 alias gbg='git bisect good'
 alias gbb='git bisect bad'
 alias gdmb='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
+
+# Temporary aliases for xscope related stuff (Nervewalk)
+alias setupenv='/Applications/XMOS_xTIMEcomposer_Community_13.2.2/SetEnv.command;' 
+alias xscope='xrun --xscope-realtime --xscope-port 127.0.0.1:12346 ~/Documents/Unreal\ Projects/NervewalkFramework/Source/XMOS/Xscope_host/sc_xscope_support/xscope_unity_socket/Nervewalk_Capacitive.xe'
+alias killx='killall xgdb && killall xrun'
+
+# Temporary aliases  for running ue4editor from commmand line. Note: nwrunecho only works for osx because of pbcopy
+alias nwrun='open /Users/Shared/UnrealEngine/4.8/Engine/Binaries/Mac/UE4Editor.app/ --args "/Users/minhoolee/Documents/Unreal Projects/NervewalkFramework/NervewalkFramework.uproject" -debug'
+alias nwrunecho='echo open /Users/Shared/UnrealEngine/4.8/Engine/Binaries/Mac/UE4Editor.app/ --args \"/Users/minhoolee/Documents/Unreal Projects/NervewalkFramework/NervewalkFramework.uproject\" -debug | pbcopy'
+
 
 # Common shell functions
 alias less='less -r'
