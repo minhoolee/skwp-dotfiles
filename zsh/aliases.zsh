@@ -133,16 +133,6 @@ alias gbg='git bisect good'
 alias gbb='git bisect bad'
 alias gdmb='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 
-# Temporary aliases for xscope related stuff (Nervewalk)
-alias setupenv='/Applications/XMOS_xTIMEcomposer_Community_13.2.2/SetEnv.command;' 
-alias xscope='xrun --xscope-realtime --xscope-port 127.0.0.1:12346 ~/Documents/Unreal\ Projects/NervewalkFramework/Source/XMOS/Xscope_host/sc_xscope_support/xscope_unity_socket/Nervewalk_Capacitive.xe'
-alias killx='killall xgdb && killall xrun'
-
-# Temporary aliases  for running ue4editor from commmand line. Note: nwrunecho only works for osx because of pbcopy
-alias nwrun='open /Users/Shared/UnrealEngine/4.8/Engine/Binaries/Mac/UE4Editor.app/ --args "/Users/minhoolee/Documents/Unreal Projects/NervewalkFramework/NervewalkFramework.uproject" -debug'
-alias nwrunecho='echo open /Users/Shared/UnrealEngine/4.8/Engine/Binaries/Mac/UE4Editor.app/ --args \"/Users/minhoolee/Documents/Unreal Projects/NervewalkFramework/NervewalkFramework.uproject\" -debug | pbcopy'
-
-
 # Common shell functions
 alias less='less -r'
 alias tf='tail -f'
@@ -222,3 +212,57 @@ alias dbmu='spring rake db:migrate:up'
 
 # Homebrew
 alias brewu='brew update  && brew upgrade --all && brew cleanup && brew prune && brew doctor'
+
+# Temporary aliases for xscope related stuff (Nervewalk)
+alias xscopeenv='/Applications/XMOS_xTIMEcomposer_Community_13.2.2/SetEnv.command;' 
+alias xscope='xrun --xscope-realtime --xscope-port 127.0.0.1:12346 ~/Documents/Unreal\ Projects/NervewalkFramework/Source/XMOS/Xscope_host/sc_xscope_support/xscope_unity_socket/Nervewalk_Capacitive.xe'
+alias killx='killall xgdb && killall xrun'
+
+# Temporary aliases  for running ue4editor from commmand line. Note: nwrunecho only works for osx because of pbcopy
+alias nwrun='open /Users/Shared/UnrealEngine/4.8/Engine/Binaries/Mac/UE4Editor.app/ --args "/Users/minhoolee/Documents/Unreal Projects/NervewalkFramework/NervewalkFramework.uproject" -debug'
+alias nwrunecho='echo open /Users/Shared/UnrealEngine/4.8/Engine/Binaries/Mac/UE4Editor.app/ --args \"/Users/minhoolee/Documents/Unreal Projects/NervewalkFramework/NervewalkFramework.uproject\" -debug | pbcopy'
+
+# List contents of directory after moving upwards
+alias ..='.. ; ls'
+alias ...='../.. ; ls'
+alias ....='../../.. ; ls'
+alias .....='../../../../ ; ls'
+
+# Functions
+# Javadoc command for special directory structure
+doc () {
+  javadoc $@ -d ../javadocs/ &> /dev/null
+  firefox ../javadocs/index.html
+}
+
+# Change directory automatically lists contents
+cd () {
+  builtin cd $@; ls
+}
+
+# Compiling java files
+jmessy () {
+  javac $@.java; java $@
+}
+
+# Compiling java files with special directory structure
+j () {
+  filename="${1%.*}"
+  javac $filename.java -d ../class
+
+  if [[ $? == 0 ]]; then
+    java -cp ../class $filename
+  fi
+}
+
+# Make src and class directories and move any existing java or class files into them, respectively
+setupenv () {
+	mkdir src/
+	mkdir javadocs/
+	mkdir class/
+
+	mv *.java src/ &> /dev/null
+	mv *.txt src/ &> /dev/null
+	mv *.class class/ &> /dev/null
+}
+
