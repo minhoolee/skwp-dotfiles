@@ -222,11 +222,11 @@ alias killx='killall xgdb && killall xrun'
 alias nwrun='open /Users/Shared/UnrealEngine/4.8/Engine/Binaries/Mac/UE4Editor.app/ --args "/Users/minhoolee/Documents/Unreal Projects/NervewalkFramework/NervewalkFramework.uproject" -debug'
 alias nwrunecho='echo open /Users/Shared/UnrealEngine/4.8/Engine/Binaries/Mac/UE4Editor.app/ --args \"/Users/minhoolee/Documents/Unreal Projects/NervewalkFramework/NervewalkFramework.uproject\" -debug | pbcopy'
 
-# List contents of directory after moving upwards
-alias ..='.. ; ls'
-alias ...='../.. ; ls'
-alias ....='../../.. ; ls'
-alias .....='../../../../ ; ls'
+# # List contents of directory after moving upwards
+# alias ..='.. ; ls'
+# alias ...='../.. ; ls'
+# alias ....='../../.. ; ls'
+# alias .....='../../../../ ; ls'
 
 # Functions
 # Javadoc command for special directory structure
@@ -236,9 +236,9 @@ doc () {
 }
 
 # Change directory automatically lists contents
-cd () {
-  builtin cd $@; ls
-}
+# cd () {
+#   builtin cd $@; ls
+# }
 
 # Compiling java files
 jmessy () {

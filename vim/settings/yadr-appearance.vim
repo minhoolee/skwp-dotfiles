@@ -28,4 +28,5 @@ else
 endif
 
 colorscheme solarized
-set background=dark
+" set background=dark
+set background=light
