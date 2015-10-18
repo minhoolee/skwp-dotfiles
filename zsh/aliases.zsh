@@ -67,6 +67,7 @@ alias ve='vim ~/.vimrc'
 
 # zsh profile editing
 alias ze='vim ~/.zshrc'
+alias zr='source ~/.zshrc'
 
 # Git Aliases
 alias gs='git status'
@@ -191,7 +192,6 @@ alias srdm='spring rake db:migrate'
 alias srdt='spring rake db:migrate'
 alias srdmt='spring rake db:migrate db:test:prepare'
 
-
 # Sprintly - https://github.com/nextbigsoundinc/Sprintly-GitHub
 alias sp='sprintly'
 # spb = sprintly branch - create a branch automatically based on the bug you're working on
@@ -265,7 +265,6 @@ setupenv () {
 	mv *.txt src/ &> /dev/null
 	mv *.class class/ &> /dev/null
 }
-
 # Issues with Apple's proprietary wifi driver
 alias wifi='~/bin/wifi/wifi.sh'
 alias wm='sudo wifi-menu'
