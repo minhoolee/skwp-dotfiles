@@ -29,4 +29,9 @@ else
 endif
 
 set background=dark
-set colorscheme=solarized
+" set background=light
+
+if system('uname')=~'Darwin'
+    colorscheme solarized
+    set background=dark
+endif
