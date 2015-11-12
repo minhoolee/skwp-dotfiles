@@ -266,3 +266,6 @@ setupenv () {
 	mv *.class class/ &> /dev/null
 }
 
+# Issues with Apple's proprietary wifi driver
+alias wifi='~/bin/wifi/wifi.sh'
+alias wm='sudo wifi-menu'
