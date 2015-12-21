@@ -31,6 +31,10 @@ endif
 set background=dark
 " set background=light
 
+if system('uname')=~'Linux'
+    set t_Co=16
+endif
+
 if system('uname')=~'Darwin'
     colorscheme solarized
     set background=dark
