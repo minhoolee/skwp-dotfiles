@@ -1,0 +1,2 @@
+Bundle "https://github.com/wakatime/vim-wakatime.git"
+Bundle "https://github.com/mbbill/undotree"
