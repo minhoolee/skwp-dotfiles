@@ -38,12 +38,8 @@ Please use GitHub Issues for pull requests or bug reports only.
 To get started please run:
 
 ```bash
-<<<<<<< HEAD
 sh -c "`curl -fsSL https://raw.githubusercontent.com/minhoolee/skwp-dotfiles/master/install.sh`"
 ```
-=======
-sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh`"
->>>>>>> Update solarized dark and light presets for iTerm2
 
 **Note:** YADR will automatically install all of its subcomponents. If you want to be asked
 about each one, use:
