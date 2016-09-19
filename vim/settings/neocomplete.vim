@@ -7,10 +7,10 @@ let g:neocomplete#enable_camel_case = 1
 let g:neocomplete#enable_smart_case = 1
 
 " Default # of completions is 100, that's crazy.
-let g:neocomplete#max_list = 5
+let g:neocomplete#max_list = 10
 
 " Set minimum syntax keyword length.
-let g:neocomplete#auto_completion_start_length = 3
+let g:neocomplete#auto_completion_start_length = 2
 
 " Map standard Ctrl-N completion to Ctrl-Space
 inoremap <C-Space> <C-n>
