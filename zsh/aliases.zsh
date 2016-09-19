@@ -214,37 +214,17 @@ alias dbmu='spring rake db:migrate:up'
 alias brewu='brew update  && brew upgrade --all && brew cleanup && brew prune && brew doctor'
 
 # Temporary aliases for xscope related stuff (Nervewalk)
-alias xscopeenv='/Applications/XMOS_xTIMEcomposer_Community_13.2.2/SetEnv.command;' 
-alias xscope='xrun --xscope-realtime --xscope-port 127.0.0.1:12346 ~/Documents/Unreal\ Projects/NervewalkFramework\ 4.10/Source/XMOS/Xscope_host/sc_xscope_support/xscope_unity_socket/Nervewalk_Capacitive.xe'
+alias xscopeenv='/Applications/XMOS_xTIMEcomposer_Community_14.2.1/SetEnv.command;'
+#alias xscope='xrun --xscope-realtime --xscope-port 127.0.0.1:12346 ~/Documents/Unreal\ Projects/NervewalkFramework\ 4.10/XMOS/Nervewalk_main.xe'
+alias xscope='xrun --xscope-realtime --xscope-port 127.0.0.1:12346 ~/Documents/Unreal\ Projects/NervewalkFramework\ 4.13/XMOS/Nervewalk_main.xe'
 alias killx='killall xgdb && killall xrun && killall startx'
 
 # Temporary aliases  for running ue4editor from commmand line. Note: nwrunecho only works for osx because of pbcopy
-alias nwrun='open /Users/Shared/UnrealEngine/4.10/Engine/Binaries/Mac/UE4Editor.app/ --args "/Users/minhoolee/Documents/Unreal Projects/NervewalkFramework 4.10/NervewalkFramework.uproject" -debug'
-alias nwrunecho='echo open /Users/Shared/UnrealEngine/4.10/Engine/Binaries/Mac/UE4Editor.app/ --args \"/Users/minhoolee/Documents/Unreal Projects/NervewalkFramework 4.10/NervewalkFramework.uproject\" -debug | pbcopy'
+alias nwrun='open /Users/Shared/UnrealEngine/4.13/Engine/Binaries/Mac/UE4Editor.app/ --args "/Users/minhoolee/Documents/Unreal Projects/NervewalkFramework 4.13/NervewalkFramework.uproject" -debug'
+alias nwrunecho='echo open /Users/Shared/UnrealEngine/4.13/Engine/Binaries/Mac/UE4Editor.app/ --args \"/Users/minhoolee/Documents/Unreal Projects/NervewalkFramework 4.13/NervewalkFramework.uproject\" -debug | pbcopy'
 
-# List contents of directory after moving upwards
-# alias ..='.. ; ls'
-# alias ...='../.. ; ls'
-# alias ....='../../.. ; ls'
-# alias .....='../../../../ ; ls'
-
-# Functions
-# xscope_rep()
-# {
-#     XSCOPE="xrun --xscope-realtime --xscope-port 127.0.0.1:12346 ~/Documents/Unreal\ Projects/NervewalkFramework\ 4.10/Source/XMOS/Xscope_host/sc_xscope_support/xscope_unity_socket/Nervewalk_Capacitive.xe"
-#     while true
-#     do
-#         (sleep 5s && kill $$ )&
-#         printf "\nxrun --xscope-realtime --xscope-port 127.0.0.1:12346 ~/Documents/Unreal\ Projects/NervewalkFramework\ 4.10/Source/XMOS/Xscope_host/sc_xscope_support/xscope_unity_socket/Nervewalk_Capacitive.xe\n\n" 1>&2;
-#         if [[ $(XSCOPE) ]]; then
-#             killall killx;
-#         else
-#             printf "\nKilling xrun due to timeout\n" 1>&2;
-#         fi
-#         sleep 5s
-#     done
-# }
-
+# Tensorflow
+alias virtualtf='source ~/bin/tensorflow/bin/activate'
 
 # Javadoc command for special directory structure
 doc () {
