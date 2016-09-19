@@ -29,7 +29,7 @@ syntax on
 
 " Change leader to a comma because the backslash is too far away
 " That means all \x commands turn into ,x
-" The mapleader has to be set before vundle starts loading all 
+" The mapleader has to be set before vundle starts loading all
 " the plugins.
 let mapleader=","
 
@@ -78,6 +78,9 @@ set list listchars=tab:\ \ ,trail:·
 set nowrap       "Don't wrap lines
 set linebreak    "Wrap lines at convenient points
 
+let delimitMate_expand_cr = 1    " Insert new line after opening bracket
+let delimitMate_expand_space = 1 " Insert spaces on both sides of parenthesis
+
 " ================ Folds ============================
 
 set foldmethod=indent   "fold based on indent
@@ -115,3 +118,8 @@ set smartcase       " ...unless we type a capital
 
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim
+
+" Enable mouse use
+set mouse=a
+set shell=/bin/zsh
+set timeoutlen=1000 ttimeoutlen=0 " 10 ms wait to escape to normal mode
