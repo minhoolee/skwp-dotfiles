@@ -39,6 +39,7 @@ let mapleader=","
 if filereadable(expand("~/.vim/vundles.vim"))
   source ~/.vim/vundles.vim
 endif
+au BufNewFile,BufRead *.vundle set filetype=vim
 
 " ================ Turn Off Swap Files ==============
 
@@ -121,5 +122,3 @@ so ~/.yadr/vim/settings.vim
 
 " Enable mouse use
 set mouse=a
-set shell=/bin/zsh
-set timeoutlen=1000 ttimeoutlen=0 " 10 ms wait to escape to normal mode
