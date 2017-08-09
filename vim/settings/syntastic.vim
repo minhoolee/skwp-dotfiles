@@ -7,7 +7,9 @@ let g:syntastic_auto_loc_list=1
 "don't care about warnings
 let g:syntastic_quiet_messages = {'level': 'warnings'}
 
-let g:syntastic_python_checkers = ['python']
+let g:syntastic_python_checkers = ['python3']
+
+let g:syntastic_cpp_compiler_options = "-std=c++11 -Wall -Wextra -Wpedantic"
 
 " Default to eslint. If you need jshint, you can override this in
 " ~/.vimrc.after

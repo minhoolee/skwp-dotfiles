@@ -1,4 +1,3 @@
-Bundle "https://github.com/SirVer/ultisnips"
 Bundle "https://github.com/mbbill/undotree"
 Bundle "https://github.com/wakatime"
 Bundle "https://github.com/Townk/vim-autoclose"
