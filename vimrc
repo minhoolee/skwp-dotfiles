@@ -82,6 +82,9 @@ set linebreak    "Wrap lines at convenient points
 let delimitMate_expand_cr = 1    " Insert new line after opening bracket
 let delimitMate_expand_space = 1 " Insert spaces on both sides of parenthesis
 
+" Handle python's triple space
+autocmd FileType python let b:delimitMate_nesting_quotes = ['"']
+
 " ================ Folds ============================
 
 set foldmethod=indent   "fold based on indent
@@ -121,3 +124,6 @@ so ~/.yadr/vim/settings.vim
 
 " Enable mouse use
 set mouse=a
+
+" Removes delay when changing from insert mode to normal mode
+set ttimeoutlen=50

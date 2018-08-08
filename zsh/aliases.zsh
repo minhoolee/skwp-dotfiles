@@ -140,6 +140,8 @@ alias l='less'
 alias lh='ls -alt | head' # see the last modified files
 alias screen='TERM=screen screen'
 alias cl='clear'
+alias v='f -e vim' # quick open file using FASD and vim
+alias tk='tmux list-sessions | awk 'BEGIN{FS=":"}{print $1}' | xargs -n 1 tmux kill-session -t' # kill all tmux sessions
 
 # Zippin
 alias gz='tar -zcvf'

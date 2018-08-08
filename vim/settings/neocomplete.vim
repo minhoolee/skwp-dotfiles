@@ -1,10 +1,11 @@
 " neocomplete
 " Next generation completion framework.
 
-let g:acp_enableAtStartup = 0
+let g:acp_enableAtStartup = 1
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_camel_case = 1
 let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#auto_complete_delay = 0
 
 " Default # of completions is 100, that's crazy.
 let g:neocomplete#max_list = 5
