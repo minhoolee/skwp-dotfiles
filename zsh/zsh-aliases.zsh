@@ -12,7 +12,14 @@ alias -g G='| grep' # now you can do: ls foo G something
 # Functions
 #
 # (f)ind by (n)ame
-# usage: fn foo 
+# usage: fn foo
 # to find all files containing 'foo' in the name
 function fn() { ls **/*$1* }
 
+# Swap two files by name
+# https://stackoverflow.com/questions/1115904/shortest-way-to-swap-two-files-in-bash
+function swap()
+{
+	local TMPFILE=tmp.$$
+	mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE $2
+}

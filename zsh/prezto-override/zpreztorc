@@ -33,7 +33,6 @@ zstyle ':prezto:load' pmodule \
          'utility' \
          'completion' \
          'archive' \
-         'fasd' \
          'git' \
          'osx' \
          'ruby' \
@@ -43,12 +42,34 @@ zstyle ':prezto:load' pmodule \
          'ssh' \
          'prompt'
 
+# Add fasd back once zsh issue is fixed
+# https://github.com/sorin-ionescu/prezto/issues/1569
+# zstyle ':prezto:load' pmodule \
+#          'environment' \
+#          'terminal' \
+#          'editor' \
+#          'history' \
+#          'directory' \
+#          'spectrum' \
+#          'utility' \
+#          'completion' \
+#          'archive' \
+#          'fasd' \
+#          'git' \
+#          'osx' \
+#          'ruby' \
+#          'syntax-highlighting' \
+#          'history-substring-search' \
+#          'autosuggestions' \
+#          'ssh' \
+#          'prompt'
+
 #
 # Editor
 #
 
 # Set the key mapping style to 'emacs' or 'vi'.
-         zstyle ':prezto:module:editor' key-bindings 'emacs'
+         zstyle ':prezto:module:editor' key-bindings 'vi'
 
 # Auto convert .... to ../..
 # zstyle ':prezto:module:editor' dot-expansion 'yes'
@@ -133,4 +154,3 @@ zstyle ':prezto:load' pmodule \
 
 # Auto start a session when Zsh is launched.
 # zstyle ':prezto:module:tmux' auto-start 'yes'
-

@@ -1,1 +1,9 @@
+# Use k and j for movement
+# https://blog.bugsnag.com/tmux-and-vim/
 set editing-mode vi
+
+# vi settings
+$if mode=vi
+  set keymap vi-insert
+  "kj": vi-movement-mode # remap escape
+$endif

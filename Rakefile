@@ -288,6 +288,10 @@ def install_prezto
       run %{ chsh -s /bin/zsh }
     end
   end
+
+  puts
+  puts "Installing zplug for zsh and prezto plugin management"
+  run %{ ruby -e "$(curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh)" }
 end
 
 def want_to_install? (section)

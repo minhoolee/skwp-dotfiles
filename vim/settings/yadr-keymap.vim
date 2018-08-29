@@ -75,7 +75,7 @@ imap <C-a> <esc>wa
 
 " ==== NERD tree
 " Open the project tree and expose current file in the nerdtree with Ctrl-\
-" " calls NERDTreeFind iff NERDTree is active, current window contains a modifiable file, and we're not in vimdiff
+" calls NERDTreeFind if NERDTree is active, current window contains a modifiable file, and we're not in vimdiff
 function! OpenNerdTree()
   if &modifiable && strlen(expand('%')) > 0 && !&diff
     NERDTreeFind
@@ -105,12 +105,12 @@ nnoremap <silent> ,x :bn<CR>
 " nnoremap <silent> <C-k> <C-w>k
 " nnoremap <silent> <C-j> <C-w>j
 
-" Make gf (go to file) create the file, if not existent
-nnoremap <C-w>f :sp +e<cfile><CR>
-nnoremap <C-w>gf :tabe<cfile><CR>
+" " Make gf (go to file) create the file, if not existent
+" nnoremap <C-w>f :sp +e<cfile><CR>
+" nnoremap <C-w>gf :tabe<cfile><CR>
 
-" Zoom in
-map <silent> ,gz <C-w>o
+" Zoom in (toggle) using zoomwintab.vim
+map <silent> <C-w>z <C-w>o
 
 " Create window splits easier. The default
 " way is Ctrl-w,v and Ctrl-w,s. I remap
@@ -140,8 +140,11 @@ nmap <silent> // :nohlsearch<CR>
 "(v)im (c)ommand - execute current line as a vim command
 nmap <silent> ,vc yy:<C-f>p<C-c><CR>
 
+"(r)eload
+nmap <silent> ,r :so %<CR>
+
 "(v)im (r)eload
-nmap <silent> ,vr :so %<CR>
+nmap <silent> ,vr :source ~/.vimrc<CR>
 
 " Type ,hl to toggle highlighting on/off, and show current value.
 noremap ,hl :set hlsearch! hlsearch?<CR>
@@ -160,13 +163,30 @@ nnoremap ` '
 nmap sj :SplitjoinSplit<cr>
 nmap sk :SplitjoinJoin<cr>
 
-" Get the current highlight group. Useful for then remapping the color
-map ,hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
-
-" ,hp = html preview
-map <silent> ,hp :!open -a Safari %<CR><CR>
-
 " Map Ctrl-x and Ctrl-z to navigate the quickfix error list (normally :cn and
 " :cp)
 nnoremap <silent> <C-x> :cn<CR>
 nnoremap <silent> <C-z> :cp<CR>
+
+" ==============================
+" Mode transitional improvements
+" ==============================
+
+set pastetoggle=<F2>
+
+" Quickly insert an empty new line without entering insert mode
+nnoremap <Leader>o o<Esc>
+nnoremap <Leader>O O<Esc>
+
+" When you’re pressing Escape to leave insert mode in the terminal, it will by
+" default take a second or another keystroke to leave insert mode completely
+" and update the statusline. This fixes that. I got this from:
+" https://powerline.readthedocs.org/en/latest/tipstricks.html#vim
+if !has('gui_running')
+  set ttimeoutlen=10
+    augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+    augroup END
+    endif

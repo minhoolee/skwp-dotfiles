@@ -1,4 +1,4 @@
-#
+# fasd
 # only init if installed.
 fasd_cache="$HOME/.fasd-init-bash"
 if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
@@ -6,7 +6,6 @@ if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
 fi
 source "$fasd_cache"
 unset fasd_cache
-
 
 # jump to recently used items
 alias a='fasd -a' # any
