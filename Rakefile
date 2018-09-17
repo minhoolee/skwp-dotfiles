@@ -20,6 +20,7 @@ task :install => [:submodule_init, :submodules] do
   install_files(Dir.glob('ctags/*')) if want_to_install?('ctags config (better js/ruby support)')
   install_files(Dir.glob('tmux/*')) if want_to_install?('tmux config')
   install_files(Dir.glob('vimify/*')) if want_to_install?('vimification of command line tools')
+  install_files(Dir.glob('hyper/*')) if want_to_install?('Hyper terminal')
   if want_to_install?('vim configuration (highly recommended)')
     install_files(Dir.glob('{vim,vimrc}'))
     Rake::Task["install_vundle"].execute
@@ -100,11 +101,11 @@ task :install_vundle do
 
   puts ""
 
-  vundle_path = File.join('vim','bundle', 'vundle')
+  vundle_path = File.join('vim','bundle', 'Vundle.vim')
   unless File.exists?(vundle_path)
     run %{
       cd $HOME/.yadr
-      git clone https://github.com/gmarik/vundle.git #{vundle_path}
+      git clone https://github.com/VundleVim/Vundle.vim.git #{vundle_path}
     }
   end
 

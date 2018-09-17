@@ -1,12 +1,13 @@
-Bundle "jistr/vim-nerdtree-tabs.git"
-Bundle "scrooloose/nerdtree.git"
-" Bundle "ctrlpvim/ctrlp.vim"
-" Bundle "JazzCore/ctrlp-cmatcher"
-Bundle "junegunn/fzf"
-Bundle "junegunn/fzf.vim"
-Bundle "xolox/vim-misc"
-Bundle "xolox/vim-session"
-Bundle "benmills/vimux"
-Bundle "mhinz/vim-startify"
-Bundle "ludovicchabant/vim-gutentags"
-Bundle "majutsushi/tagbar"
+Plugin 'jistr/vim-nerdtree-tabs.git'
+Plugin 'scrooloose/nerdtree.git'
+" Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'JazzCore/ctrlp-cmatcher'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-session'
+Plugin 'benmills/vimux'
+Plugin 'mhinz/vim-startify'
+Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'majutsushi/tagbar'
+Plugin 'editorconfig/editorconfig-vim'
