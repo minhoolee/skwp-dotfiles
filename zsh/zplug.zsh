@@ -1,5 +1,7 @@
 # zplug plugins
 
+source ~/.zplug/init.zsh
+
 zplug "zplug/zplug", hook-build:'zplug --self-manage'
 
 # Run a command after a plugin is installed/updated

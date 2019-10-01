@@ -119,6 +119,7 @@ alias gcl='git clone'
 alias gp='git push'
 alias gpu='git push -u origin `git rev-parse --abbrev-ref HEAD`'
 alias gnb='git nb' # new branch aka checkout -b
+alias gcl='git clone'
 alias gclean='git rm -r --cached . ; git add .'
 alias gcln='git clean'
 alias gclndf='git clean -df'
