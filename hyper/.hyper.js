@@ -6,7 +6,7 @@ module.exports = {
   config: {
     // choose either `'stable'` for receiving highly polished,
     // or `'canary'` for less polished but more frequent updates
-    updateChannel: 'canary',
+    updateChannel: 'stable',
 
     // default font size in pixels for all tabs
     fontSize: 12,
@@ -46,7 +46,10 @@ module.exports = {
     backgroundColor: '#000',
 
     // set opacity
-    opacity: 0.90,
+    opacity: {
+      focus: 0.9,
+      blur: 0.7,
+    },
 
     // terminal selection color
     selectionColor: 'rgba(248,28,229,0.3)',
@@ -167,11 +170,11 @@ module.exports = {
     // "hyper-tabs-enhanced",
     "hyperterm-paste",
     // "hyper-tab-icons",
-    "gitrocket",
-    "space-pull",
+    // "gitrocket",
+    // "space-pull",
     "hyper-snazzy",
     "hypertheme",
-    "hyper-spotify",
+    // "hyper-spotify",
     // "hyperborder",
     // "hyperline",
     "hyperterm-lastpass"
