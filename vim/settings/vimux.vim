@@ -13,6 +13,12 @@ map <Leader>vi :call VimuxInspectRunner()<CR>
 map <Leader>pc :call VimuxRunCommand("g++ " . bufname("%") . " -o " . expand("%:r"))<CR>
 map <Leader>pcp :call VimuxPromptCommand("g++ " . bufname("%") . " -o " . expand("%:r"))<CR>
 
+" Java
+map <Leader>pjc :call VimuxRunCommand("javac " . bufname("%"))<CR>
+map <Leader>pjcp :call VimuxPromptCommand("javac " . bufname("%"))<CR>
+map <Leader>pj :call VimuxRunCommand("java " . bufname("%"))<CR>
+map <Leader>pjp :call VimuxPromptCommand("java " . bufname("%"))<CR>
+
 " Leetcode
 map <Leader>lc :call VimuxRunCommand("leetcode test " . bufname("%"))<CR>
 map <Leader>lcp :call VimuxPromptCommand("leetcode test " . bufname("%") . " -t ")<CR>

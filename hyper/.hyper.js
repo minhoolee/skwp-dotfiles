@@ -9,7 +9,7 @@ module.exports = {
     updateChannel: 'canary',
 
     // default font size in pixels for all tabs
-    fontSize: 12,
+    fontSize: 10,
 
     // font family with optional fallbacks
     fontFamily: 'Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
@@ -171,7 +171,7 @@ module.exports = {
     "space-pull",
     "hyper-snazzy",
     "hypertheme",
-    "hyper-spotify",
+    // "hyper-spotify",
     // "hyperborder",
     // "hyperline",
     "hyperterm-lastpass"
