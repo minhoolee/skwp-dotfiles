@@ -24,9 +24,14 @@ highlight Pmenu ctermbg=Black ctermfg=DarkCyan
 highlight PmenuSel ctermbg=DarkGray ctermfg=White
 
 " Allow enter to choose completion
-" inoremap <expr> <CR> pumvisible() ? "\<c-y>" : "\<CR>"
-
-" TODO: Fix bug where Esc does not exit YCM menu
+let g:ycm_key_list_stop_completion = ['<C-y>', '<CR>']
 
 " Remove syntax diagnostic
 let g:ycm_show_diagnostics_ui = 0
+
+" Remove split window with function definition
+let g:ycm_autoclose_preview_window_after_completion = 1
+
+" Disable preview window
+" set completeopt-=preview
+" let g:ycm_add_preview_to_completeopt = 0
