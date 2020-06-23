@@ -111,7 +111,7 @@
   # the usual default is to push all branches
   default = upstream
 [core]
-  autocrlf = false
+	autocrlf = input
   editor = vim
   excludesfile = ~/.yadr/git/gitignore
 	pager = diff-so-fancy | less --tabs=4 -RFX

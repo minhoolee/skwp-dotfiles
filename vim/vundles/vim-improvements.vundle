@@ -4,7 +4,7 @@ Plugin 'Raimondi/delimitMate'
 
 " Disabled for now until some bugs are fixed
 " See if bugs are fixed
-Plugin 'Valloric/YouCompleteMe'
+"  Plugin 'Valloric/YouCompleteMe'
 " Plugin 'roxma/nvim-yarp'
 " Plugin 'roxma/vim-hug-neovim-rpc'
 Plugin 'briandoll/change-inside-surroundings.vim.git'

@@ -146,8 +146,8 @@ alias agf='ag --nobreak --nonumbers --noheading . | fzf' # Search file contents
 alias pi='pip install'
 alias pu='pip uninstall -y'
 alias pua="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U"
-alias workon='source activate'
-alias workoff='source deactivate'
+alias workon='conda activate'
+alias workoff='conda deactivate'
 
 # Zippin
 alias gz='tar -zcvf'
