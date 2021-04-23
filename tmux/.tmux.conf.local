@@ -705,25 +705,6 @@ set -g @continuum-restore 'on'
 set -g @continuum-boot 'on'
 set -g @continuum-boot-options 'hyper,fullscreen'
 
-# Use <F12> to toggle active session for nested tmux sessions
-# https://gist.github.com/samoshkin/05e65f7f1c9b55d3fc7690b59d678734
-bind -T root F12  \
-  set prefix None \;\
-  set key-table off \;\
-  set status-style "fg=$color_status_text,bg=$color_window_off_status_bg" \;\
-  set window-status-current-format "#[fg=$color_window_off_status_bg,bg=$color_window_off_status_current_bg]$separator_powerline_right#[default] #I:#W# #[fg=$color_window_off_status_current_bg,bg=$color_window_off_status_bg]$separator_powerline_right#[default]" \;\
-  set window-status-current-style "fg=$color_dark,bold,bg=$color_window_off_status_current_bg" \;\
-  if -F '#{pane_in_mode}' 'send-keys -X cancel' \;\
-  refresh-client -S \;\
-
-bind -T off F12 \
-  set -u prefix \;\
-  set -u key-table \;\
-  set -u status-style \;\
-  set -u window-status-current-style \;\
-  set -u window-status-current-format \;\
-  refresh-client -S
-
 # Feel free to NOT use this variables at all (remove, rename)
 # this are named colors, just for convenience
 color_orange="colour166" # 208, 166
@@ -749,6 +730,25 @@ color_level_stress="$color_red"
 color_window_off_indicator="colour088"
 color_window_off_status_bg="colour238"
 color_window_off_status_current_bg="colour254"
+
+# Use <F12> to toggle active session for nested tmux sessions
+# https://gist.github.com/samoshkin/05e65f7f1c9b55d3fc7690b59d678734
+bind -T root F12  \
+  set prefix None \;\
+  set key-table off \;\
+  set status-style "fg=$color_status_text,bg=$color_window_off_status_bg" \;\
+  set window-status-current-format "#[fg=$color_window_off_status_bg,bg=$color_window_off_status_current_bg]$separator_powerline_right#[default] #I:#W# #[fg=$color_window_off_status_current_bg,bg=$color_window_off_status_bg]$separator_powerline_right#[default]" \;\
+  set window-status-current-style "fg=$color_dark,bold,bg=$color_window_off_status_current_bg" \;\
+  if -F '#{pane_in_mode}' 'send-keys -X cancel' \;\
+  refresh-client -S \;\
+
+bind -T off F12 \
+  set -u prefix \;\
+  set -u key-table \;\
+  set -u status-style \;\
+  set -u window-status-current-style \;\
+  set -u window-status-current-format \;\
+  refresh-client -S
 
 # define widgets we're going to use in status bar
 # note, that this is not the complete list, some of them are loaded from plugins
@@ -791,17 +791,6 @@ set -g @prefix_highlight_bg "$color_secondary"
 set -g @prefix_highlight_show_copy_mode 'on'
 
 # List of plugins
-# set -g @plugin 'tmux-plugins/tpm'
-# set -g @plugin 'tmux-plugins/tmux-sensible'
-# set -g @plugin 'tmux-plugins/tmux-continuum'        # Automatically load saved Tmux Environment
-# set -g @plugin 'tmux-plugins/tmux-resurrect'        # Save Tmux Environment
-# set -g @plugin 'tmux-plugins/tmux-sessionist'       # Tmux utilities
-# # set -g @plugin 'tmux-plugins/tmux-yank'             # Copy to system clipboard
-# # set -g @plugin 'tmux-plugins/tmux-copycat'
-# # set -g @plugin 'tmux-plugins/tmux-prefix-highlight'
-# set -g @plugin 'tmux-plugins/vim-tmux-focus-events'
-# set -g @plugin 'samoshkin/tmux-plugin-sysstat'
-
 set -g @tpm_plugins '          \
   tmux-plugins/tpm             \
   tmux-plugins/tmux-sensible   \

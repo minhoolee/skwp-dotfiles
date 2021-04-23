@@ -39,9 +39,9 @@ function! MyFilename()
        \ ('' != expand('%') ? expand('%') : '[NoName]')
 endfunction
 
-function! LightlineTags()
-    return '%{gutentags#statusline("[Generating\ tags...]")}'
-endfunction
+" function! LightlineTags()
+"     return '%{gutentags#statusline("[Generating\ tags...]")}'
+" endfunction
 
 " Use status bar even with single buffer
 set laststatus=2
